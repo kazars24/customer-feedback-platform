@@ -6,14 +6,12 @@ possible_cities = ["", "Москва", "Санкт-Петербург", "Ниж�
 st.set_page_config(
     page_title="Customer Feedback Platform",
     page_icon="👥",
+    layout="wide"
 )
 
-c30, c31, c32 = st.columns([2.5, 1, 3])
 
-with c30:
-    # st.image("logo.png", width=400)
-    st.title("Customer Feedback Platform by Vibe++")
-    st.header("")
+
+st.title("Customer Feedback Platform by Vibe++")
 
 with st.expander("ℹ️ - About this app", expanded=True):
     st.write(
