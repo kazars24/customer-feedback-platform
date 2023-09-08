@@ -4,6 +4,10 @@ from geopy.geocoders import Nominatim
 import geopandas as gpd
 import pandas as pd
 import numpy as np
+import os
+import sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from src.llm.agent import Agent
 
 possible_cities = ["", "Москва", "Санкт-Петербург", "Нижний Новгород"]
 
@@ -55,7 +59,16 @@ with c1:
         scale_submit_button2 = st.form_submit_button(label="Подтвердить выбор")
 
     with c2:
-        st.title('Тут будут реультаты')
+        st.title('Тут будут результаты')
+
+        model_path = "D:\\llama.cpp\\models\\7b\\ggml-model-q4_1.bin"
+        overall_sys_prompt = 'Ты — русскоязычный автоматический анализатор отзывов покупателей. Ты получаешь на вход текст нескольких отзывов одного филиала. Сделай короткий вывод о филиале.'
+        review_overall_agent = Agent(model_path, overall_sys_prompt)
+
+        request = '''
+                Отзыв 1: Свежие фрукты и овощи, чистый и приятный магазин, располагается рядом с домом, хороший выбор товаров, хорошие цены, быстрое обслуживание, нет очередей, вежливый персонал. Отзыв 2: Нет очередей, хороший выбор товаров, хорошие цены, располагается рядом с домом, вежливый персонал, быстрое обслуживание, свежие фрукты и овощи, чистый и приятный магазин. Вежливый персонал. Быстро нашла что мне нужно. Отличные продукты, свежие. Отзыв 3: Невысокие цены. Персонал приветливый. Отзыв 4: Можно купить кофе, капучино, флэт уайт. Даже ночью)
+            '''
+        st.text(review_overall_agent.interact(request))
 
         # список адресов
         addresses = ['Ваш адрес 1', 'Ваш адрес 2', 'Ваш адрес 3']
