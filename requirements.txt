@@ -1,0 +1,7 @@
+streamlit
+geopy
+pandas
+geopandas
+numpy
+pydeck
+llama_cpp==0.1.62
