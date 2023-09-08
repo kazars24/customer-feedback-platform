@@ -37,7 +37,7 @@ def get_saiga_model(model_path, n_ctx=2000):
 
 
 class Agent():
-    def __init__(self, model_path, system_prompt, token=ROLE_TOKENS["bot"], n_ctx=2000, top_k=30, top_p=0.9, temperature=0.2, repeat_penalty=1.1):
+    def __init__(self, model_path, system_prompt, token=ROLE_TOKENS["bot"], n_ctx=2000, top_k=30, top_p=0.9, temperature=0.5, repeat_penalty=1.1):
         self.model = get_saiga_model(model_path, n_ctx)
         self.system_prompt = system_prompt
         self.token = token
