@@ -1,142 +1,136 @@
 import json
-from statistics import mean
+import random
+import time
 import streamlit as st
 import pydeck as pdk
 from geopy.geocoders import Nominatim
-import geopandas as gpd
-import pandas as pd
-import numpy as np
-import os
-import sys
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from src.llm.agent import Agent
 
+# Load the updated JSON data
+with open('E:\\customer-feedback-platform\\src\\data\\reviews_data_vladimir_pyaterochka.json', 'r', encoding='utf-8') as f:
+    shop_data = json.load(f)
 
-def data_preprocessing(path):
-    with open(path, 'r') as f:
-        data = json.load(f)
-    map_data = {}
-    for v in data.values():
-        map_data[v.get("address")] = [review['rating'] for review in v['reviews_list']]
-    for key, values in map_data.items():
-        if values:
-            average = sum(values) / len(values)
-            map_data[key] = average
+# Create lists for red and green points on the map
+red_address_data = []
+green_address_data = []
+
+for url, data in shop_data.items():
+    address = data["address"]
+    color = 'red' if data.get("is_worse", False) else 'green'
+    try:
+        location = Nominatim(user_agent="myGeocoder").geocode(address)
+    except Exception:
+        time.sleep(2)
+        location = Nominatim(user_agent="myGeocoder").geocode(address)
+    if location:
+        lat, lon = location.latitude, location.longitude
+        if color == 'red':
+            red_address_data.append({"address": address, "color": color, "lat": lat, "lon": lon})
         else:
-            map_data[key] = 0
-    return map_data
+            green_address_data.append({"address": address, "color": color, "lat": lat, "lon": lon})
 
+# Create a map using PyDeck with separate layers for red and green points
+st.title('Карта магазинов')
+st.pydeck_chart(pdk.Deck(
+    map_style='mapbox://styles/mapbox/light-v9',
+    initial_view_state=pdk.ViewState(
+        latitude=56.1364,  # Adjust the latitude and longitude to focus on your area
+        longitude=40.4086,
+        zoom=12,
+        pitch=50,
+    ),
+    layers=[
+        pdk.Layer(
+            'ScatterplotLayer',
+            data=red_address_data,
+            get_position='[lon, lat]',
+            get_fill_color='[255, 0, 0]',  # Red color for is_worse=True
+            get_radius=200,
+        ),
+        pdk.Layer(
+            'ScatterplotLayer',
+            data=green_address_data,
+            get_position='[lon, lat]',
+            get_fill_color='[0, 255, 0]',  # Green color for is_worse=False
+            get_radius=200,
+        ),
+    ],
+))
 
-possible_cities = ["", "Москва", "Санкт-Петербург", "Нижний Новгород"]
+# Function to analyze reviews using the LLM agent
+def analyze_reviews(agent, reviews):
+    request = 'Отзывы о магазине:\n' + ''.join(reviews)
+    return agent.interact(request)
 
-st.set_page_config(
-    page_title="Customer Feedback Platform",
-    page_icon="👥",
-    layout="wide"
-)
+def get_random_sample_reviews(source, len_r=30):
+    reviews_list = []
+    for shop_url, shop_data in source.items():
+        reviews = shop_data.get("reviews_list", [])
+        for review in reviews:
+            reviews_list.append(f"{review['text']};\n")
+    return random.sample(reviews_list, len_r)
 
-st.title("Customer Feedback Platform by Vibe++")
+# Step 1: Analyze random 30 reviews for two JSONs
+st.title('Анализ отзывов')
 
-with st.expander("ℹ️ - О проекте", expanded=True):
-    st.write(
-        """     
-Тут будет описание сервиса
-	    """
-    )
+# Load the JSON data
+with open('E:\\customer-feedback-platform\\src\\data\\reviews_data_vladimir_pyaterochka.json', 'r', encoding='utf-8') as f:
+    shop_data_vladimir_pyaterochka = json.load(f)
+with open('E:\\customer-feedback-platform\\src\\data\\reviews_data_vladimir_magnit.json', 'r', encoding='utf-8') as f:
+    shop_data_vladimir_magnit = json.load(f)
 
-    st.markdown("")
+# Example reviews from two JSONs, you can modify this to select random reviews
+reviews_vladimir_pyaterochka = get_random_sample_reviews(shop_data_vladimir_pyaterochka)
+reviews_vladimir_magnit = get_random_sample_reviews(shop_data_vladimir_magnit)
 
-st.markdown("")
-st.markdown("## 📌 Ниже рабочая область")
+# Define LLM models and prompts
+model_path = "D:\\llama.cpp\\models\\7b\\ggml-model-q4_1.bin"
+overall_all_filials_sys_prompt = 'Ты — русскоязычный автоматический анализатор отзывов. Ты получаешь на вход несколько отзывов. Проанализируй текст отзывов и выделите ключевые проблемы в этих отзывах. Ответ дай коротким списком. Обобщи.'
 
-c1, c2 = st.columns([2, 5])
-with c1:
-    with st.form(key="scale_form"):
-        scale = st.radio(
-            "Выберите масштаб",
-            ["Магазин", "Район", "Город", "Регион"],
-            help="Тут нужно выбрать один из предложенных вариантов, в рамках которого требуется провести анализ отзывов.",
-        )
-        scale_submit_button1 = st.form_submit_button(label="Подтвердить выбор")
+# Create LLM agents
+review_overall_all_filials_agent = Agent(model_path, overall_all_filials_sys_prompt)
 
-    with st.form(key="name_form"):
-        if scale == "Магазин":
-            name = st.text_input(
-                "Введите адрес магазина:",
-                help="Введите адрес магазина вручную.")
-        elif scale == "Район":
-            name = st.text_input(
-                "Введите район:",
-                help="Введите район вручную.")
-        elif scale == "Город":
-            city_name = st.selectbox('Выберите город: ', possible_cities)
-        else:
-            manual_address = st.text_input(
-                "Введите регион:",
-                help="Введите регион вручную.")
-        scale_submit_button2 = st.form_submit_button(label="Подтвердить выбор")
+# Analyze reviews using LLM agents
+pyaterochka_summary = analyze_reviews(review_overall_all_filials_agent, reviews_vladimir_pyaterochka)
+magnit_summary = analyze_reviews(review_overall_all_filials_agent, reviews_vladimir_magnit)
 
-    with c2:
-        st.title('Тут будут результаты')
+# Display analysis results
+st.write("Анализ отзывов для магазина 'Пятерочка':")
+st.write(pyaterochka_summary)
 
-        if st.button('Анализировать'):
+st.write("Анализ отзывов для магазина 'Магнит':")
+st.write(magnit_summary)
 
-            model_path = "D:\\llama.cpp\\models\\7b\\ggml-model-q4_1.bin"
-            overall_sys_prompt = 'Ты — русскоязычный автоматический анализатор отзывов покупателей. Ты получаешь на вход текст нескольких отзывов одного филиала. Сделай короткий вывод о филиале.'
-            review_overall_agent = Agent(model_path, overall_sys_prompt)
+# Step 2: Define which shops from reviews_data_vladimir_pyaterochka.json are worse than overall shops from reviews_data_vladimir_magnit.json
+st.title('Сравнение магазинов')
 
-            request = '''
-                    Отзыв 1: Свежие фрукты и овощи, чистый и приятный магазин, располагается рядом с домом, хороший выбор товаров, хорошие цены, быстрое обслуживание, нет очередей, вежливый персонал. Отзыв 2: Нет очередей, хороший выбор товаров, хорошие цены, располагается рядом с домом, вежливый персонал, быстрое обслуживание, свежие фрукты и овощи, чистый и приятный магазин. Вежливый персонал. Быстро нашла что мне нужно. Отличные продукты, свежие. Отзыв 3: Невысокие цены. Персонал приветливый. Отзыв 4: Можно купить кофе, капучино, флэт уайт. Даже ночью)
-                '''
-            st.text(review_overall_agent.interact(request))
+# Define LLM model and prompt for comparing shops
+comparer_sys_prompt = 'Ты — русскоязычный автоматический анализатор магазинов. Ты получаешь на вход два описания магазинов в формате "Магазин 1: <описание 1>; Магазин 1: <описание 1>". Ты должен сравнить их и сообщить, какой магазин лучше.'
+comparer_agent = Agent(model_path, comparer_sys_prompt)
 
-            #map_data = data_preprocessing('JSON FILES')
-            #addresses = np.array(map_data.keys())
-            #ratings = np.array(map_data.values())
-            addresses = ["Большая Московская, 71, Октябрьский район, Владимир, 600000",
-                         "Проспект Строителей, 9 к4, Ленинский район, Владимир, 600014",
-                         "Северная, 3а, Фрунзенский район, Владимир, 600007"]
-            ratings = np.array([1.2, 3.1, 4.8])
+# Compare shops based on analysis results
+compare_request = f'Какой магазин лучше и почему? Сравни:\n 1. Магазин "Пятерочка": {pyaterochka_summary};\n 2. Магазин "Магнит": {magnit_summary}'
+shop_comparison_result = comparer_agent.interact(compare_request)
 
-            geolocator = Nominatim(user_agent="myGeocoder")
+# Display shop comparison result
+st.write("Сравнение магазинов:")
+st.write(shop_comparison_result)
 
-            lats = []
-            longs = []
-            for address in addresses:
-                location = geolocator.geocode(address)
-                print(location)
-                lats.append(location.latitude)
-                longs.append(location.longitude)
+# Step 3: Define advises for the shop that is worse
+st.title('Советы по развитию')
 
-            # создаем фрейм данных с адресами и рейтингами
-            df = pd.DataFrame({
-                'Адрес': addresses,
-                'Широта': lats,
-                'Долгота': longs,
-                'Рейтинг': ratings
-            })
+# Define LLM model and prompt for providing advice
+adviser_sys_prompt = 'Ты — русскоязычный бизнес-советник. Ты получаешь на вход данные о магазине. Напиши, что можно улучшить и как на основе данных.'
+adviser_agent = Agent(model_path, adviser_sys_prompt)
 
-            # определяем цвета для рейтингов
-            color_scale = np.array(['red', 'orange', 'yellow', 'green', 'blue'])
-            df['color'] = pd.cut(df['Рейтинг'], bins=[0., 1., 2., 3., 4., 5.], labels=color_scale)
+# Provide advice based on which shop is worse
+if 'Пятерочка' in shop_comparison_result:
+    advise_request = f'Магазин "Пятерочка": {pyaterochka_summary}'
+else:
+    advise_request = f'Магазин "Магнит": {magnit_summary}'
 
-            st.pydeck_chart(pdk.Deck(
-                map_style='mapbox://styles/mapbox/light-v9',
-                initial_view_state=pdk.ViewState(
-                    latitude=np.mean(df['Широта']),
-                    longitude=np.mean(df['Долгота']),
-                    zoom=11,
-                    pitch=50,
-                ),
-                layers=[
-                    pdk.Layer(
-                        'ScatterplotLayer',
-                        data=df,
-                        get_position='[Долгота, Широта]',
-                        get_color='color',
-                        get_radius=200,
-                    ),
-                ],
-            ))
+shop_advice = adviser_agent.interact(advise_request)
 
-
+# Display shop advice
+st.write("Советы по развитию магазина:")
+st.write(shop_advice)
