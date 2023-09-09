@@ -1,6 +1,7 @@
 {
     "https://2gis.ru/vladimir/firm/70000001055075287": {
         "address": "Дворянская, 10, Ленинский район, Владимир, 600000",
+        "is_worse": false,
         "reviews_list": [
             {
                 "rating": 5,
@@ -46,6 +47,7 @@
     },
     "https://2gis.ru/vladimir/firm/8304040094093589": {
         "address": "Проспект Строителей, 23, Ленинский район, Владимир, 600028",
+        "is_worse": false,
         "reviews_list": [
             {
                 "rating": 5,
@@ -201,6 +203,7 @@
     },
     "https://2gis.ru/vladimir/firm/70000001024308247": {
         "address": "Полины Осипенко, 14/43, Октябрьский район, Владимир, 600009",
+        "is_worse": false,
         "reviews_list": [
             {
                 "rating": 5,
@@ -256,6 +259,7 @@
     },
     "https://2gis.ru/vladimir/firm/70000001024796585": {
         "address": "Проспект Ленина, 23, Ленинский район, Владимир, 600015",
+        "is_worse": false,
         "reviews_list": [
             {
                 "rating": 5,
@@ -311,6 +315,7 @@
     },
     "https://2gis.ru/vladimir/firm/70000001024489126": {
         "address": "Михайловская, 53, Октябрьский район, Владимир, 600020",
+        "is_worse": false,
         "reviews_list": [
             {
                 "rating": 5,
@@ -361,6 +366,7 @@
     },
     "https://2gis.ru/vladimir/firm/70000001026800246": {
         "address": "Октябрьский проспект, 7, Ленинский район, Владимир, 600025",
+        "is_worse": true,
         "reviews_list": [
             {
                 "rating": 4,
@@ -406,6 +412,7 @@
     },
     "https://2gis.ru/vladimir/firm/70000001024908395": {
         "address": "Верхняя Дуброва, 21, Ленинский район, Владимир, 600022",
+        "is_worse": true,
         "reviews_list": [
             {
                 "rating": 5,
@@ -471,6 +478,7 @@
     },
     "https://2gis.ru/vladimir/firm/70000001036182461": {
         "address": "Батурина, 37г, Октябрьский район, Владимир, 600017",
+        "is_worse": false,
         "reviews_list": [
             {
                 "rating": 5,
@@ -496,6 +504,7 @@
     },
     "https://2gis.ru/vladimir/firm/70000001022120941": {
         "address": "Растопчина, 19а, Фрунзенский район, Владимир, 600032",
+        "is_worse": false,
         "reviews_list": [
             {
                 "rating": 5,
@@ -526,6 +535,7 @@
     },
     "https://2gis.ru/vladimir/firm/70000001022536424": {
         "address": "Мира, 34, Октябрьский район, Владимир, 600017",
+        "is_worse": false,
         "reviews_list": [
             {
                 "rating": 5,
@@ -536,6 +546,7 @@
     },
     "https://2gis.ru/vladimir/firm/70000001031937922": {
         "address": "1-й Кирпичный проезд, 1 к1, Октябрьский район, Владимир, 600005",
+        "is_worse": false,
         "reviews_list": [
             {
                 "rating": 5,
@@ -551,6 +562,7 @@
     },
     "https://2gis.ru/vladimir/firm/70000001035527007": {
         "address": "Мира, 4, Ленинский район, Владимир, 600021",
+        "is_worse": false,
         "reviews_list": [
             {
                 "rating": 5,
@@ -606,6 +618,7 @@
     },
     "https://2gis.ru/vladimir/firm/70000001026800253": {
         "address": "Песочная, 15Б, Коммунар м-н, Октябрьский район, Владимир, 600023",
+        "is_worse": false,
         "reviews_list": [
             {
                 "rating": 5,
@@ -631,6 +644,7 @@
     },
     "https://2gis.ru/vladimir/firm/70000001020174111": {
         "address": "Проспект Ленина, 65, Ленинский район, Владимир, 600022",
+        "is_worse": true,
         "reviews_list": [
             {
                 "rating": 1,
@@ -710,6 +724,7 @@
         ]
     },
     "https://2gis.ru/vladimir/firm/70000001037825163": {
+        "is_worse": false,
         "address": "Судогодское шоссе, 1, Коммунар м-н, Октябрьский район, Владимир, 600023",
         "reviews_list": [
             {
@@ -730,6 +745,7 @@
         ]
     },
     "https://2gis.ru/vladimir/firm/70000001032603343": {
+        "is_worse": true,
         "address": "Белоконской, 18, Октябрьский район, Владимир, 600014",
         "reviews_list": [
             {
@@ -760,6 +776,7 @@
         ]
     },
     "https://2gis.ru/vladimir/firm/70000001032075823": {
+        "is_worse": false,
         "address": "Пионерская 1-я, 88а, Октябрьский район, Владимир, 600009",
         "reviews_list": [
             {
@@ -796,6 +813,7 @@
     },
     "https://2gis.ru/vladimir/firm/70000001053515348": {
         "address": "Мира, 17, Октябрьский район, Владимир, 600017",
+        "is_worse": false,
         "reviews_list": [
             {
                 "rating": 1,
@@ -816,6 +834,7 @@
     },
     "https://2gis.ru/vladimir/firm/8304040093948169": {
         "address": "Добросельская, 177а, Фрунзенский район, Владимир, 600031",
+        "is_worse": false,
         "reviews_list": [
             {
                 "rating": 4,
@@ -836,6 +855,7 @@
     },
     "https://2gis.ru/vladimir/firm/70000001029659587": {
         "address": "Красносельский проезд, 6, Красное село м-н, Фрунзенский район, Владимир, 600016",
+        "is_worse": false,
         "reviews_list": [
             {
                 "rating": 2,
@@ -851,6 +871,7 @@
     },
     "https://2gis.ru/vladimir/firm/70000001052009046": {
         "address": "Диктора Левитана, 59/1, Ленинский район, Владимир, 600033",
+        "is_worse": false,
         "reviews_list": [
             {
                 "rating": 5,
@@ -866,10 +887,12 @@
     },
     "https://2gis.ru/vladimir/firm/70000001019407684": {
         "address": "Кольцевая 3-я, 18, 8-й Юго-Западный м-н, Ленинский район, Владимир, 600033",
+        "is_worse": true,
         "reviews_list": []
     },
     "https://2gis.ru/vladimir/firm/70000001023171180": {
         "address": "Пугачёва, 62, Ленинский район, Владимир, 600024",
+        "is_worse": false,
         "reviews_list": [
             {
                 "rating": 5,
@@ -910,6 +933,7 @@
     },
     "https://2gis.ru/vladimir/firm/70000001025591952": {
         "address": "Комиссарова, 10/13, Красное село м-н, Фрунзенский район, Владимир, 600018",
+        "is_worse": false,
         "reviews_list": [
             {
                 "rating": 4,
@@ -940,6 +964,7 @@
     },
     "https://2gis.ru/vladimir/firm/8304040093948172": {
         "address": "Соколова-Соколёнка, 17д, Красное село м-н, Фрунзенский район, Владимир, 600035",
+        "is_worse": false,
         "reviews_list": [
             {
                 "rating": 4,
@@ -965,6 +990,7 @@
     },
     "https://2gis.ru/vladimir/firm/70000001027661446": {
         "address": "Ноябрьская улица, 2Б, Юрьевец м-н, Ленинский район, Владимир, 600901",
+        "is_worse": false,
         "reviews_list": [
             {
                 "rating": 5,
@@ -990,6 +1016,7 @@
     },
     "https://2gis.ru/vladimir/firm/70000001036047297": {
         "address": "Нижняя Дуброва, 13, 8-й Юго-Западный м-н, Ленинский район, Владимир, 600037",
+        "is_worse": false,
         "reviews_list": [
             {
                 "rating": 4,
@@ -1025,6 +1052,7 @@
     },
     "https://2gis.ru/vladimir/firm/8304040093948166": {
         "address": "Безыменского, 9, Красное село м-н, Фрунзенский район, Владимир, 600035",
+        "is_worse": false,
         "reviews_list": [
             {
                 "rating": 5,
@@ -1065,10 +1093,12 @@
     },
     "https://2gis.ru/vladimir/firm/70000001022303016": {
         "address": "Суздальский проспект, 24, Фрунзенский район, Владимир, 600027",
+        "is_worse": true,
         "reviews_list": []
     },
     "https://2gis.ru/vladimir/firm/70000001030555375": {
         "address": "Суздальский проспект, 25в, Красное село м-н, Фрунзенский район, Владимир, 600027",
+        "is_worse": true,
         "reviews_list": [
             {
                 "rating": 3,
@@ -1084,6 +1114,7 @@
     },
     "https://2gis.ru/vladimir/firm/70000001068493126": {
         "address": "Фоминская, 1, Заклязьменский пос., Октябрьский район, Владимир, 600023",
+        "is_worse": false,
         "reviews_list": [
             {
                 "rating": 5,
@@ -1104,6 +1135,7 @@
     },
     "https://2gis.ru/vladimir/firm/70000001040027558": {
         "address": "Тургенева, 4, Красное село м-н, Фрунзенский район, Владимир, 600031",
+        "is_worse": false,
         "reviews_list": [
             {
                 "rating": 1,
@@ -1124,6 +1156,7 @@
     },
     "https://2gis.ru/vladimir/firm/70000001042538379": {
         "address": "Красноармейская, 37, Ленинский район, Владимир, 600021",
+        "is_worse": false,
         "reviews_list": [
             {
                 "rating": 5,
@@ -1139,6 +1172,7 @@
     },
     "https://2gis.ru/vladimir/firm/70000001057901440": {
         "address": "Куйбышева, 5, Сновицы-Веризино м-н, Октябрьский район, Владимир, 600026",
+        "is_worse": false,
         "reviews_list": [
             {
                 "rating": 4,
@@ -1149,6 +1183,7 @@
     },
     "https://2gis.ru/vladimir/firm/70000001037861439": {
         "address": "Суздальская, 5, с. Сельцо, Суздальский район, Владимирская область, 601261",
+        "is_worse": true,
         "reviews_list": [
             {
                 "rating": 5,
@@ -1174,6 +1209,7 @@
     },
     "https://2gis.ru/vladimir/firm/70000001034406095": {
         "address": "Лакина, 193а, Октябрьский район, Владимир, 600028",
+        "is_worse": false,
         "reviews_list": [
             {
                 "rating": 5,
@@ -1204,6 +1240,7 @@
     },
     "https://2gis.ru/vladimir/firm/70000001026800260": {
         "address": "Нижняя Дуброва, 48, Ленинский район, Владимир, 600022",
+        "is_worse": false,
         "reviews_list": [
             {
                 "rating": 5,
@@ -1229,6 +1266,7 @@
     },
     "https://2gis.ru/vladimir/firm/70000001035508845": {
         "address": "Огурцова, 60, пос. Боголюбово, Суздальский район, Владимирская область, 601270",
+        "is_worse": false,
         "reviews_list": [
             {
                 "rating": 5,
@@ -1279,6 +1317,7 @@
     },
     "https://2gis.ru/vladimir/firm/70000001017876114": {
         "address": "Лакина, 171а, Октябрьский район, Владимир, 600028",
+        "is_worse": false,
         "reviews_list": [
             {
                 "rating": 5,
@@ -1299,6 +1338,7 @@
     },
     "https://2gis.ru/vladimir/firm/70000001032449850": {
         "address": "Проспект Ленина, 37, Ленинский район, Владимир, 600015",
+        "is_worse": false,
         "reviews_list": [
             {
                 "rating": 5,
@@ -1324,6 +1364,7 @@
     },
     "https://2gis.ru/vladimir/firm/70000001045033966": {
         "address": "Славная, 12, Юрьевец м-н, Ленинский район, Владимир, 600901",
+        "is_worse": false,
         "reviews_list": [
             {
                 "rating": 1,
@@ -1344,6 +1385,7 @@
     },
     "https://2gis.ru/vladimir/firm/70000001049500622": {
         "address": "Славная, 11, Юрьевец м-н, Ленинский район, Владимир, 600901",
+        "is_worse": true,
         "reviews_list": [
             {
                 "rating": 1,
@@ -1359,10 +1401,12 @@
     },
     "https://2gis.ru/vladimir/firm/70000001055244554": {
         "address": "Улица Пушкина, 6, пос. Боголюбово, Суздальский район, Владимирская область, 601270",
+        "is_worse": true,
         "reviews_list": []
     },
     "https://2gis.ru/vladimir/firm/8304040094092578": {
         "address": "Проспект Строителей, 40, Октябрьский район, Владимир, 600014",
+        "is_worse": false,
         "reviews_list": [
             {
                 "rating": 5,
@@ -1403,6 +1447,7 @@
     },
     "https://2gis.ru/vladimir/firm/8304040093948168": {
         "address": "Верхняя Дуброва, 22Б, Ленинский район, Владимир, 600022",
+        "is_worse": false,
         "reviews_list": [
             {
                 "rating": 5,
@@ -1418,6 +1463,7 @@
     },
     "https://2gis.ru/vladimir/firm/8304040094055795": {
         "address": "Растопчина, 49а, Фрунзенский район, Владимир, 600027",
+        "is_worse": false,
         "reviews_list": [
             {
                 "rating": 5,
@@ -1433,6 +1479,7 @@
     },
     "https://2gis.ru/vladimir/firm/70000001033353401": {
         "address": "Большой проезд, 16а, Ленинский район, Владимир, 600015",
+        "is_worse": false,
         "reviews_list": [
             {
                 "rating": 5,
@@ -1448,6 +1495,7 @@
     },
     "https://2gis.ru/vladimir/firm/8304040094090038": {
         "address": "Куйбышева, 66Б, Красное село м-н, Фрунзенский район, Владимир, 600035",
+        "is_worse": false,
         "reviews_list": [
             {
                 "rating": 5,
@@ -1463,10 +1511,12 @@
     },
     "https://2gis.ru/vladimir/firm/70000001078608383": {
         "address": "Соколова-Соколёнка, 11а, Красное село м-н, Фрунзенский район, Владимир, 600018",
+        "is_worse": true,
         "reviews_list": []
     },
     "https://2gis.ru/vladimir/firm/70000001023674992": {
         "address": "Перекопский городок, 16, Ленинский район, Владимир, 600021",
+        "is_worse": false,
         "reviews_list": [
             {
                 "rating": 5,
@@ -1477,6 +1527,7 @@
     },
     "https://2gis.ru/vladimir/firm/70000001037861325": {
         "address": "Энергетиков, 27Б, Энергетик м-н, Ленинский район, Владимир, 600902",
+        "is_worse": false,
         "reviews_list": [
             {
                 "rating": 5,
@@ -1502,6 +1553,7 @@
     },
     "https://2gis.ru/vladimir/firm/70000001024706337": {
         "address": "Красноармейская, 45, Ленинский район, Владимир, 600021",
+        "is_worse": true,
         "reviews_list": [
             {
                 "rating": 1,
@@ -1517,6 +1569,7 @@
     },
     "https://2gis.ru/vladimir/firm/70000001031545589": {
         "address": "Красная площадь, 3, Суздаль, Владимирская область, 601293",
+        "is_worse": false,
         "reviews_list": [
             {
                 "rating": 5,
@@ -1532,6 +1585,7 @@
     },
     "https://2gis.ru/vladimir/firm/70000001035563921": {
         "address": "Владимирская, 2а, пос. Садовый, Суздальский район, Владимирская область, 601271",
+        "is_worse": false,
         "reviews_list": [
             {
                 "rating": 5,
@@ -1562,6 +1616,7 @@
     },
     "https://2gis.ru/vladimir/firm/70000001041238613": {
         "address": "Береговая, 7, с. Новое, Суздальский район, Владимирская область, 601275",
+        "is_worse": false,
         "reviews_list": [
             {
                 "rating": 5,
@@ -1592,6 +1647,7 @@
     },
     "https://2gis.ru/vladimir/firm/70000001026800255": {
         "address": "Октябрьская, 11Б, Оргтруд м-н, Фрунзенский район, Владимир, 600003",
+        "is_worse": false,
         "reviews_list": [
             {
                 "rating": 5,
@@ -1622,6 +1678,7 @@
     },
     "https://2gis.ru/vladimir/firm/8304040093948165": {
         "address": "Балакирева, 26а, Ленинский район, Владимир, 600028",
+        "is_worse": false,
         "reviews_list": [
             {
                 "rating": 1,
@@ -1662,6 +1719,7 @@
     },
     "https://2gis.ru/vladimir/firm/70000001020173832": {
         "address": "Чайковского, 44, Ленинский район, Владимир, 600015",
+        "is_worse": false,
         "reviews_list": [
             {
                 "rating": 5,
@@ -1687,6 +1745,7 @@
     },
     "https://2gis.ru/vladimir/firm/70000001020530559": {
         "address": "Балакирева, 35, Октябрьский район, Владимир, 600028",
+        "is_worse": false,
         "reviews_list": [
             {
                 "rating": 5,
@@ -1707,6 +1766,7 @@
     },
     "https://2gis.ru/vladimir/firm/70000001024896625": {
         "address": "Верхняя Дуброва, 38ж, Ленинский район, Владимир, 600037",
+        "is_worse": false,
         "reviews_list": [
             {
                 "rating": 5,
@@ -1717,6 +1777,7 @@
     },
     "https://2gis.ru/vladimir/firm/70000001025393179": {
         "address": "Безыменского, 8а, Красное село м-н, Фрунзенский район, Владимир, 600035",
+        "is_worse": false,
         "reviews_list": [
             {
                 "rating": 5,
@@ -1757,6 +1818,7 @@
     },
     "https://2gis.ru/vladimir/firm/70000001028706614": {
         "address": "Проспект Ленина, 42, Ленинский район, Владимир, 600022",
+        "is_worse": true,
         "reviews_list": [
             {
                 "rating": 1,
@@ -1772,6 +1834,7 @@
     },
     "https://2gis.ru/vladimir/firm/70000001031614869": {
         "address": "Юбилейная, 64Б, Фрунзенский район, Владимир, 600031",
+        "is_worse": false,
         "reviews_list": [
             {
                 "rating": 5,
@@ -1787,6 +1850,7 @@
     },
     "https://2gis.ru/vladimir/firm/70000001063409058": {
         "address": "Доватора, 4, Ленинский район, Владимир, 600033",
+        "is_worse": false,
         "reviews_list": [
             {
                 "rating": 5,
@@ -1822,10 +1886,12 @@
     },
     "https://2gis.ru/vladimir/firm/70000001078615514": {
         "address": "Улица Всесвятская, 14, Юрьевец м-н, Ленинский район, Владимир, 600901",
+        "is_worse": true,
         "reviews_list": []
     },
     "https://2gis.ru/vladimir/firm/70000001034211989": {
         "address": "Бульвар Всполье, 31, Суздаль, Владимирская область, 601291",
+        "is_worse": false,
         "reviews_list": [
             {
                 "rating": 5,
@@ -1861,10 +1927,12 @@
     },
     "https://2gis.ru/vladimir/firm/70000001033798115": {
         "address": "Студенческая улица, 3а, с. Новоалександрово, Суздальский район, Владимирская область, 601255",
+        "is_worse": true,
         "reviews_list": []
     },
     "https://2gis.ru/vladimir/firm/70000001065960607": {
         "address": "Молодёжная, 1, с. Ивановское, Суздальский район, Владимирская область, 601261",
+        "is_worse": false,
         "reviews_list": [
             {
                 "rating": 5,
@@ -1885,34 +1953,42 @@
     },
     "https://2gis.ru/vladimir/firm/70000001057362739": {
         "address": "Центральная, 9, пос. Колокша, Собинский район, Владимирская область, 601213",
+        "is_worse": true,
         "reviews_list": []
     },
     "https://2gis.ru/vladimir/firm/70000001078614388": {
         "address": "Рабочая, 2, с. Новоалександрово, Суздальский район, Владимирская область, 601255",
+        "is_worse": true,
         "reviews_list": []
     },
     "https://2gis.ru/vladimir/firm/70000001078614506": {
         "address": "Октябрьская, 25, Оргтруд м-н, Фрунзенский район, Владимир, 600003",
+        "is_worse": true,
         "reviews_list": []
     },
     "https://2gis.ru/vladimir/firm/70000001057362732": {
         "address": "Большая дорога, 16, с. Борисовское, Суздальский район, Владимирская область, 601272",
+        "is_worse": true,
         "reviews_list": []
     },
     "https://2gis.ru/vladimir/firm/70000001041127256": {
         "address": "Центральная, 182, пос. Сокол, Суздальский район, Владимирская область, 601278",
+        "is_worse": true,
         "reviews_list": []
     },
     "https://2gis.ru/vladimir/firm/70000001053858226": {
         "address": "Большая дорога, 22, с. Борисовское, Суздальский район, Владимирская область, 601272",
+        "is_worse": true,
         "reviews_list": []
     },
     "https://2gis.ru/vladimir/firm/70000001078616491": {
         "address": "Весенняя, 59, пос. Сокол, Суздальский район, Владимирская область, 601278",
+        "is_worse": true,
         "reviews_list": []
     },
     "https://2gis.ru/vladimir/firm/70000001033231198": {
         "address": "Центральная, 35Б, с. Павловское, Суздальский район, Владимирская область, 601273",
+        "is_worse": false,
         "reviews_list": [
             {
                 "rating": 5,
